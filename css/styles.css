@@ -10910,6 +10910,11 @@ p.lead {
   font-size: 0.8rem;
 }
 
+summary {
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
 .no-linking {
   text-decoration: none;
   color: inherit;
