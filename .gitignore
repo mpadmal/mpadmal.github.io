@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+
+# Local tooling (Claude Code preview-server config)
+.claude/
+
+# Local working documents — keep out of the public repo
+ProfileDatabase.md
+Madhushanka_Padmal_CV.html
+
+# Backups and old-design files (local only)
+dev/
+build/
+
+# Node / build leftovers
+node_modules/
+npm-debug.log
+.sass-cache/
+bower_components/
+assets/img/publications/README.md
+assets/img/pcbs/README.md

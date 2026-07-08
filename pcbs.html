@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="PCB designs by Madhushanka Padmal — open-source instruments, RF and backscatter research boards, and freelance high-speed layouts.">
+<meta name="author" content="Madhushanka Padmal">
+<meta name="theme-color" content="#1f5fb0">
+<title>PCB Designs — Madhushanka Padmal</title>
+<link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="css/site.css" rel="stylesheet">
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="index.html">Madhushanka&nbsp;Padmal</a>
+    <a href="index.html">← Back to CV</a>
+    <a href="#open-source">Open-Source</a>
+    <a href="#research-boards">Research</a>
+    <a href="#client-work">Client Work</a>
+    <a href="publications.html">Publications</a>
+  </div>
+</nav>
+
+<header class="hero sub" id="top">
+  <div class="wrap">
+    <div>
+      <h1>PCB Designs</h1>
+      <div class="role">Schematic capture · RF &amp; high-speed layout · bring-up · production</div>
+      <p class="tagline">A selection of boards I have designed, assembled, and shipped — from award-winning open-source instruments to research prototypes and freelance client work in Altium, OrCAD, KiCad, and Eagle.</p>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section id="open-source">
+    <div class="shead"><span class="bar"></span><h2>Open-Source Hardware</h2></div>
+    <div class="pcbgrid">
+      <div class="pcb">
+        <div class="pcb-img"><img src="assets/img/pcbs/pslab.jpg" alt="PSLab board" loading="lazy" onerror="this.remove()"></div>
+        <div class="pcb-body">
+          <span class="award-strip">PCBWay Design Award — 1st Place (2017), 3rd Place (2021)</span>
+          <h3>Pocket Science Lab (PSLab)</h3>
+          <div class="venue">FOSSASIA · 1.7k+ GitHub stars · used by Keysight</div>
+          <p>Pocket-sized signal measurement and acquisition device — multi-channel oscilloscope, logic analyzer, and waveform generator on PIC24. Led hardware through multiple production iterations with China manufacturing partners.</p>
+          <div class="tags"><span class="tag">PIC24</span><span class="tag">USB</span><span class="tag">Mass production</span><span class="tag">DFM</span></div>
+        </div>
+      </div>
+      <div class="pcb">
+        <div class="pcb-img"><img src="assets/img/pcbs/pslab-mini.jpg" alt="PSLab Mini board" loading="lazy" onerror="this.remove()"></div>
+        <div class="pcb-body">
+          <h3>PSLab Mini</h3>
+          <div class="venue">FOSSASIA · Wi-Fi pocket instrument</div>
+          <p>Dual-MCU host-offload architecture: STM32H563 (Cortex-M33) host plus ESP32-C3 (RISC-V) wireless co-processor over UART/SPI. 2-channel 12-bit oscilloscope at 5 MSPS with BNC inputs, logic analyzer, and multimeter, streaming over Wi-Fi/UDP.</p>
+          <div class="tags"><span class="tag">STM32H563</span><span class="tag">ESP32-C3</span><span class="tag">Wi-Fi / UDP</span><span class="tag">12-bit @ 5 MSPS</span></div>
+        </div>
+      </div>
+      <div class="pcb">
+        <div class="pcb-img"><img src="assets/img/pcbs/magic-epaper.jpg" alt="Magic e-Paper board" loading="lazy" onerror="this.remove()"></div>
+        <div class="pcb-body">
+          <h3>Magic e-Paper</h3>
+          <div class="venue">FOSSASIA · battery-less NFC e-ink writer</div>
+          <p>Drives a 24-pin FPC e-paper display from a bitmap received over NFC-V (ISO 15693) or USB-C, built around an ST25DV dynamic NFC tag. Fully battery-less: powered by RF energy harvested from the 13.56 MHz field through a tuned antenna. Designed in KiCad.</p>
+          <div class="tags"><span class="tag">ST25DV</span><span class="tag">NFC-V antenna</span><span class="tag">RF harvesting</span><span class="tag">CH32V003 RISC-V</span></div>
+        </div>
+      </div>
+      <div class="pcb">
+        <div class="pcb-img"><img src="assets/img/pcbs/badge-magic.jpg" alt="Badge Magic board" loading="lazy" onerror="this.remove()"></div>
+        <div class="pcb-body">
+          <h3>Badge Magic</h3>
+          <div class="venue">FOSSASIA · BLE 5.3 LED badge</div>
+          <p>11×44 LED-matrix name badge driven over BLE 5.3 on a WCH CH582M RISC-V SoC — with electret microphone for sound visualization, external flash, USB, and Li-ion charging and protection.</p>
+          <div class="tags"><span class="tag">CH582M</span><span class="tag">BLE 5.3</span><span class="tag">LED matrix</span><span class="tag">Li-ion power path</span></div>
+        </div>
+      </div>
+      <div class="pcb">
+        <div class="pcb-img"><img src="assets/img/pcbs/neurolab.jpg" alt="NeuroLab board" loading="lazy" onerror="this.remove()"></div>
+        <div class="pcb-body">
+          <span class="award-strip">PCBWay AT-Maker Prize (2018/19)</span>
+          <h3>NeuroLab</h3>
+          <div class="venue">Assistive-technology EEG platform</div>
+          <p>Low-cost, portable EEG brainwave measurement hardware for accessible signal monitoring and analysis — sensitive analog front-end design for µV-level biosignals.</p>
+          <div class="tags"><span class="tag">EEG AFE</span><span class="tag">Low noise</span><span class="tag">Assistive tech</span></div>
+        </div>
+      </div>
+      <div class="pcb">
+        <div class="pcb-img"><img src="assets/img/pcbs/crazyflie-decks.jpg" alt="Crazyflie expansion decks" loading="lazy" onerror="this.remove()"></div>
+        <div class="pcb-body">
+          <h3>Crazyflie Expansion Decks</h3>
+          <div class="venue">Micro-UAV sensor boards · firmware merged upstream</div>
+          <p>Expansion boards for the Crazyflie 2.0 micro-drone: a thermal-imaging deck and a 13-sensor time-of-flight deck for obstacle avoidance and mapping — the hardware behind the ACRA 2020 Best-Paper UAV system.</p>
+          <div class="tags"><span class="tag">ToF array</span><span class="tag">Thermal camera</span><span class="tag">STM32F405</span><span class="tag">nRF51822</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="research-boards">
+    <div class="shead"><span class="bar"></span><h2>Research Boards (PhD &amp; Postdoc)</h2></div>
+    <div class="pcbgrid">
+      <div class="pcb">
+        <div class="pcb-img"><img src="assets/img/pcbs/sharppeak.jpg" alt="SharpPeak transmitter board" loading="lazy" onerror="this.remove()"></div>
+        <div class="pcb-body">
+          <span class="award-strip">Patent-pending · IVA Top 30 Innovations in Sweden</span>
+          <h3>SharpPeak Tunnel-Diode Transmitter</h3>
+          <div class="venue">ACM SenSys 2026 · 868 MHz</div>
+          <p>RF board for an ultra-low-power active transmitter: tunnel-diode oscillator with a novel two-stage biasing network delivering stable, low-phase-noise oscillation at under 175 µW — no injection locking required.</p>
+          <div class="tags"><span class="tag">Negative resistance</span><span class="tag">Biasing network</span><span class="tag">Phase noise</span><span class="tag">Sub-GHz RF</span></div>
+        </div>
+      </div>
+      <div class="pcb">
+        <div class="pcb-img"><img src="assets/img/pcbs/chord-saw.jpg" alt="Chord SAW-filter module" loading="lazy" onerror="this.remove()"></div>
+        <div class="pcb-body">
+          <h3>Chord SAW-Filter Query Module</h3>
+          <div class="venue">DCOSS-IoT 2026 · 868–916 MHz</div>
+          <p>Pluggable RF module with combinatorial band-pass SAW-filter arrays and a logic-gate discriminator, giving each analog backscatter tag a unique frequency signature — integrates with existing tags without modifying their modulation.</p>
+          <div class="tags"><span class="tag">SAW filters</span><span class="tag">BPF arrays</span><span class="tag">Analog logic</span></div>
+        </div>
+      </div>
+      <div class="pcb">
+        <div class="pcb-img"><img src="assets/img/pcbs/fpga-backscatter.jpg" alt="FPGA backscatter platform" loading="lazy" onerror="this.remove()"></div>
+        <div class="pcb-body">
+          <h3>FPGA Backscatter Platform</h3>
+          <div class="venue">Doctoral research · BLE + IEEE 802.15.4</div>
+          <p>Multi-layer, high-speed FPGA-based backscatter boards (DE0-Nano) for BLE and 802.15.4 experiments — VHDL design with timing analysis, hand assembly, and validation in anechoic chambers including radiation-pattern measurement.</p>
+          <div class="tags"><span class="tag">High-speed layout</span><span class="tag">FPGA</span><span class="tag">VHDL</span><span class="tag">Anechoic validation</span></div>
+        </div>
+      </div>
+      <div class="pcb">
+        <div class="pcb-img"><img src="assets/img/pcbs/backscatter-tags.jpg" alt="Analog backscatter tag boards" loading="lazy" onerror="this.remove()"></div>
+        <div class="pcb-body">
+          <h3>Analog Backscatter Tag Family</h3>
+          <div class="venue">RFID '22–'24 · MSWiM '25 · RFCom '24</div>
+          <p>Series of low-power tag front-ends behind the group's backscatter papers: harmonic-tuned identification (HarmonicID), band-pass-filtered desynchronized querying, channel-estimating tags, and concurrent-sensing localization tags.</p>
+          <div class="tags"><span class="tag">RF front-end</span><span class="tag">Harmonics</span><span class="tag">µW power</span><span class="tag">Best Paper 2024</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="client-work">
+    <div class="shead"><span class="bar"></span><h2>Freelance Client Work</h2></div>
+    <div class="pcbgrid">
+      <div class="pcb">
+        <div class="pcb-img"><img src="assets/img/pcbs/freelance.jpg" alt="Freelance PCB designs" loading="lazy" onerror="this.remove()"></div>
+        <div class="pcb-body">
+          <h3>High-Speed Layouts for International Clients</h3>
+          <div class="venue">Fiverr Level 2 Seller · 2018 – 2020</div>
+          <p>Schematics and multilayer layouts from requirements to fabrication-ready files: HDMI, MIPI, and Ethernet routing with controlled 100 Ω differential impedance, length and skew matching, and controlled-impedance stackups with managed return paths.</p>
+          <div class="tags"><span class="tag">HDMI / MIPI / Ethernet</span><span class="tag">100 Ω differential</span><span class="tag">Stackup design</span><span class="tag">Eagle / KiCad</span></div>
+        </div>
+      </div>
+    </div>
+    <a class="backlink" href="index.html">← Back to the CV</a>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div style="font-weight:700;color:#fff;font-size:16px">Madhushanka Padmal</div>
+    <div style="margin-top:4px;font-size:13px">RF / Microwave &amp; Wireless Systems Engineer · Uppsala, Sweden</div>
+    <div class="chips">
+      <a href="mailto:madhushanka.padmal@gmail.com">madhushanka.padmal@gmail.com</a>
+      <a href="index.html">CV</a>
+      <a href="publications.html">Publications</a>
+      <a href="https://github.com/cloudypadmal" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/cloudypadmal" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div style="margin-top:14px;font-size:12px;color:#8fa3bd">© <span id="year">2026</span> Madhushanka Padmal</div>
+  </div>
+</footer>
+
+<a href="#top" class="toTop" id="toTop" aria-label="Back to top">↑</a>
+
+<script src="js/site.js"></script>
+</body>
+</html>

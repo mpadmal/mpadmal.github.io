@@ -1,0 +1,218 @@
+/* ==========================================================
+   Madhushanka Padmal — site stylesheet
+   Shared by index.html and pcbs.html.
+   Based on the minimal design of Madhushanka_Padmal_CV.html.
+   ========================================================== */
+
+:root{
+  --ink:#0f1b2d; --body:#33415c; --muted:#64748b; --line:#e6eaf0;
+  --bg:#f6f8fb; --card:#ffffff;
+  --accent:#1f5fb0; --accent2:#16b3b9; --accent-soft:#eaf2fb;
+  --chip:#eef2f7; --chipink:#33506f;
+  --gold:#b88420; --goldbg:#fdf4e1;
+  --shadow:0 1px 2px rgba(16,27,45,.05),0 6px 22px rgba(16,27,45,.06);
+  --radius:16px;
+  --navh:54px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--body);
+  font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:980px;margin:0 auto;padding:0 22px}
+
+/* ---------- top nav ---------- */
+nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.97);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:6px;height:var(--navh);overflow-x:auto;scrollbar-width:none}
+nav .wrap::-webkit-scrollbar{display:none}
+nav .brand{font-weight:800;color:var(--ink);margin-right:auto;white-space:nowrap}
+nav .brand:hover{text-decoration:none;color:var(--accent)}
+nav a{color:var(--muted);font-weight:600;font-size:13.5px;padding:7px 9px;border-radius:9px;white-space:nowrap;
+  transition:color .15s,background-color .15s}
+nav a:hover{color:var(--accent);background:var(--accent-soft);text-decoration:none}
+nav a.active{color:var(--accent);background:var(--accent-soft)}
+
+/* anchor targets stop below the sticky nav */
+section,[id]{scroll-margin-top:calc(var(--navh) + 14px)}
+
+/* ---------- hero ---------- */
+header.hero{position:relative;overflow:hidden;color:#fff;
+  background:linear-gradient(135deg,#16335f 0%,#1f5fb0 55%,#16b3b9 130%)}
+header.hero::after{content:"";position:absolute;inset:0;
+  background:radial-gradient(900px 380px at 88% -20%,rgba(255,255,255,.22),transparent 60%);pointer-events:none}
+.hero .wrap{position:relative;z-index:1;padding:42px 22px 46px;display:flex;gap:26px;align-items:center;flex-wrap:wrap}
+.avatar{position:relative;width:110px;height:110px;border-radius:50%;flex:0 0 auto;overflow:hidden;
+  background:rgba(255,255,255,.14);border:3px solid rgba(255,255,255,.55);
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:38px;letter-spacing:1px;color:#fff;
+  box-shadow:0 8px 26px rgba(10,22,40,.35)}
+.avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.hero h1{margin:0 0 4px;font-size:34px;font-weight:800;letter-spacing:-.5px;color:#fff;line-height:1.1}
+.hero .role{font-size:17px;font-weight:600;color:#e8f3ff;margin-bottom:8px}
+.hero .tagline{font-size:14.5px;color:#d4e6f7;max-width:620px;margin:0 0 16px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips a{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.13);
+  border:1px solid rgba(255,255,255,.28);color:#fff;font-weight:600;font-size:13px;
+  padding:7px 12px;border-radius:999px;transition:background-color .15s}
+.chips a:hover{background:rgba(255,255,255,.24);text-decoration:none}
+.chips svg{width:15px;height:15px;fill:none;stroke:#fff;stroke-width:1.8}
+
+/* compact hero for sub-pages */
+header.hero.sub .wrap{padding:30px 22px 32px}
+header.hero.sub h1{font-size:27px}
+header.hero.sub .tagline{margin-bottom:0}
+
+/* ---------- stat band ---------- */
+.stats{background:var(--card);border-bottom:1px solid var(--line)}
+.stats .wrap{display:grid;grid-template-columns:repeat(5,1fr);gap:0;padding:0}
+.stat{padding:18px 14px;text-align:center;border-right:1px solid var(--line)}
+.stat:last-child{border-right:none}
+.stat .n{font-size:25px;font-weight:800;color:var(--accent);line-height:1}
+.stat .l{font-size:12px;color:var(--muted);margin-top:5px;font-weight:600;letter-spacing:.2px}
+
+/* ---------- sections ---------- */
+section{padding:34px 0 6px}
+.shead{display:flex;align-items:center;gap:11px;margin:0 0 18px}
+.shead .bar{width:5px;height:24px;border-radius:3px;background:linear-gradient(180deg,var(--accent),var(--accent2))}
+.shead h2{margin:0;font-size:21px;font-weight:800;color:var(--ink);letter-spacing:-.3px}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  box-shadow:var(--shadow);padding:20px 22px;margin-bottom:16px}
+.lead{font-size:15.5px;color:var(--body)}
+.lead strong{color:var(--ink)}
+
+/* timeline
+   Geometry: the vertical line is centered at x=8 (left:7px + half of 2px).
+   Each dot is 18px wide overall (12px + 3px border each side), so its left
+   offset is chosen to center it on x=8 too: item x=36, -37px + 9px = -28 → 8. */
+.tl{position:relative;padding-left:36px}
+.tl::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.tl .item{position:relative;margin-bottom:20px}
+.tl .item:last-child{margin-bottom:4px}
+.tl .item::before{content:"";position:absolute;left:-37px;top:4px;width:12px;height:12px;border-radius:50%;
+  background:var(--accent);border:3px solid #fff;box-shadow:0 0 0 2px var(--accent)}
+.tl .role{font-weight:700;color:var(--ink);font-size:15.5px}
+.tl .meta{font-size:13px;color:var(--muted);font-weight:600;margin:1px 0 7px}
+.tl ul{margin:0;padding-left:18px}
+.tl li{margin-bottom:3px}
+
+/* project grid */
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.proj{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  box-shadow:var(--shadow);padding:18px 19px;border-top:3px solid var(--accent);transition:transform .15s,box-shadow .15s}
+.proj:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(16,27,45,.10)}
+.proj h3{margin:0 0 3px;font-size:15.5px;color:var(--ink)}
+.proj .venue{font-size:12px;font-weight:700;color:var(--accent);margin-bottom:8px}
+.proj p{margin:0 0 11px;font-size:13.6px;color:var(--body)}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:11px;font-weight:600;color:var(--chipink);background:var(--chip);
+  padding:3px 9px;border-radius:999px}
+
+/* skills */
+.skillgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.skillblock{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:15px 17px;box-shadow:var(--shadow)}
+.skillblock h4{margin:0 0 10px;font-size:13px;text-transform:uppercase;letter-spacing:.6px;color:var(--muted)}
+.skillblock .tags .tag{background:var(--accent-soft);color:#1c4f8f;font-size:11.5px;font-weight:600;padding:4px 10px}
+
+/* publications */
+.pub{display:flex;gap:13px;padding:11px 8px;margin:0 -8px;border-bottom:1px solid var(--line);border-radius:8px;
+  transition:background-color .15s}
+.pub:hover{background:#f4f7fb}
+.pub:last-child{border-bottom:none}
+.pub .yr{flex:0 0 52px;font-weight:800;color:var(--accent);font-size:13px;padding-top:1px}
+.pub .body{flex:1}
+.pub .ti{color:var(--ink);font-weight:600;font-size:14px}
+.pub .au{color:var(--muted);font-size:12.6px;margin-top:1px}
+.pub .vn{font-size:12px;color:var(--body);font-weight:600;margin-top:2px}
+.badge{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 7px;border-radius:999px;margin-left:6px;vertical-align:middle}
+.b-best{background:var(--goldbg);color:var(--gold)}
+.b-first{background:var(--accent-soft);color:#1c4f8f}
+.grouplbl{font-size:12px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--muted);margin:6px 0 2px}
+
+/* awards */
+.cols2{column-count:2;column-gap:26px}
+.cols2 .row{break-inside:avoid;margin-bottom:7px}
+.award{display:flex;gap:12px;margin-bottom:11px}
+.award .yr{flex:0 0 84px;font-weight:700;color:var(--accent);font-size:13px}
+.award .d{flex:1}
+.award .t{color:var(--ink);font-weight:600}
+.award .s{color:var(--muted);font-size:13px}
+
+/* section-header action link (e.g. "expanded view →") */
+.shead .more{margin-left:auto;font-size:13px;font-weight:600;white-space:nowrap}
+
+/* ---------- expanded publications (publications.html) ---------- */
+.pubx{display:flex;gap:16px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  box-shadow:var(--shadow);padding:16px 17px;margin-bottom:12px;transition:transform .15s,box-shadow .15s}
+.pubx:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(16,27,45,.10)}
+.pubx-img{position:relative;flex:0 0 150px;aspect-ratio:3/2;border-radius:10px;border:1px solid var(--line);
+  overflow:hidden;align-self:flex-start;background:var(--chip) center/30px no-repeat;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 20V10M10 20V4M16 20v-7M21 20H3'/%3E%3C/svg%3E")}
+.pubx-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.pubx .bd{flex:1;min-width:0}
+.pubx .yrline{font-size:12.5px;font-weight:800;color:var(--accent);display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.pubx .yrline .loc{font-weight:600;color:var(--muted)}
+.pubx h3{margin:3px 0 2px;font-size:15.5px;color:var(--ink);line-height:1.35}
+.pubx .au{color:var(--muted);font-size:12.6px}
+.pubx .au b{color:var(--body)}
+.pubx .sum{font-size:13.4px;color:var(--body);margin:8px 0 0}
+@media(max-width:760px){
+  .pubx{flex-direction:column;gap:12px}
+  .pubx-img{flex:none;width:100%;aspect-ratio:2/1}
+}
+
+/* ---------- PCB showcase (pcbs.html) ---------- */
+.pcbgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.pcb{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column;
+  transition:transform .15s,box-shadow .15s}
+.pcb:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(16,27,45,.10)}
+.pcb-img{position:relative;aspect-ratio:2/1;background:var(--chip) center/38px no-repeat;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='4' y='4' width='16' height='16' rx='2'/%3E%3Ccircle cx='9' cy='9' r='1.6'/%3E%3Ccircle cx='15' cy='15' r='1.6'/%3E%3Cpath d='M9 9h4M15 15v-4M4 12h2M18 12h2M12 4v2M12 18v2'/%3E%3C/svg%3E");
+  border-bottom:1px solid var(--line)}
+.pcb-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.pcb-body{padding:15px 17px 17px;display:flex;flex-direction:column;flex:1}
+.pcb h3{margin:0 0 2px;font-size:15.5px;color:var(--ink)}
+.pcb .venue{font-size:12px;font-weight:700;color:var(--accent);margin-bottom:7px}
+.pcb p{margin:0 0 11px;font-size:13.6px;color:var(--body)}
+.pcb .tags{margin-top:auto}
+.pcb .award-strip{display:inline-block;font-size:11px;font-weight:700;color:var(--gold);
+  background:var(--goldbg);padding:2px 9px;border-radius:999px;margin-bottom:8px;align-self:flex-start}
+.backlink{display:inline-flex;align-items:center;gap:6px;font-weight:600;font-size:13.5px;margin:18px 0 0}
+
+/* ---------- footer ---------- */
+footer{margin-top:30px;background:#0f1b2d;color:#c7d3e3;padding:26px 0;text-align:center}
+footer a{color:#8fd0ff}
+footer .chips{justify-content:center;margin-top:12px}
+footer .chips a{border-color:rgba(255,255,255,.18);background:rgba(255,255,255,.06)}
+
+.toTop{position:fixed;right:18px;bottom:18px;width:42px;height:42px;border-radius:50%;
+  background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;
+  box-shadow:var(--shadow);font-size:20px;opacity:0;pointer-events:none;transition:opacity .2s}
+.toTop.show{opacity:1;pointer-events:auto}
+.toTop:hover{text-decoration:none;background:#16335f}
+
+@media(max-width:760px){
+  .hero .wrap{padding:30px 22px 34px}
+  .hero h1{font-size:27px}
+  .stats .wrap{grid-template-columns:repeat(2,1fr)}
+  .stat:nth-child(2){border-right:none}
+  .grid,.skillgrid,.pcbgrid{grid-template-columns:1fr}
+  .cols2{column-count:1}
+  nav .brand{display:none}
+}
+@media print{
+  nav,.toTop{display:none}
+  body{background:#fff;font-size:11px}
+  header.hero{color:#0f1b2d;background:#fff;border-bottom:2px solid var(--accent)}
+  .hero h1,.hero .role,.hero .tagline{color:#0f1b2d}
+  .avatar{color:var(--accent);border-color:var(--accent);background:#eef4fb}
+  .chips a{color:#1c4f8f;background:#eef4fb;border-color:#cfe0f3}
+  .chips svg{stroke:#1c4f8f}
+  .card,.proj,.skillblock,.pcb{box-shadow:none}
+  .proj:hover,.pcb:hover{transform:none}
+  section{padding:14px 0 2px}
+  footer{background:#fff;color:#33415c;border-top:1px solid var(--line)}
+}
