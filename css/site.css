@@ -158,6 +158,13 @@ section{padding:34px 0 6px}
 .pubx .au{color:var(--muted);font-size:12.6px}
 .pubx .au b{color:var(--body)}
 .pubx .sum{font-size:13.4px;color:var(--body);margin:8px 0 0}
+.pubx .links{margin-top:10px}
+.pubx .links a{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;
+  padding:5px 12px;border-radius:999px;background:var(--accent-soft);color:#1c4f8f;
+  transition:background-color .15s,color .15s}
+.pubx .links a:hover{background:var(--accent);color:#fff;text-decoration:none}
+.pubx .links svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:1.8;
+  stroke-linecap:round;stroke-linejoin:round}
 @media(max-width:760px){
   .pubx{flex-direction:column;gap:12px}
   .pubx-img{flex:none;width:100%;aspect-ratio:2/1}

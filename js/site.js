@@ -15,6 +15,38 @@
   var yr = document.getElementById("year");
   if (yr) { yr.textContent = new Date().getFullYear(); }
 
+  /* ---------- publication links: local PDF if present, else web ---------- */
+  document.querySelectorAll(".pubx[data-pdf]").forEach(function (card) {
+    var pdf = card.getAttribute("data-pdf");
+    var web = card.getAttribute("data-link");
+    var bd = card.querySelector(".bd");
+    if (!bd) { return; }
+
+    function addLink(href, isPdf) {
+      var row = document.createElement("div");
+      row.className = "links";
+      var a = document.createElement("a");
+      a.href = href;
+      if (isPdf) {
+        a.setAttribute("download", "");
+        a.innerHTML = '<svg viewBox="0 0 24 24"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>Download PDF';
+      } else {
+        a.target = "_blank";
+        a.rel = "noopener";
+        a.innerHTML = '<svg viewBox="0 0 24 24"><path d="M14 4h6v6M20 4L10 14M20 14v6H4V4h6"/></svg>View online';
+      }
+      row.appendChild(a);
+      bd.appendChild(row);
+    }
+
+    fetch(pdf, { method: "HEAD" })
+      .then(function (r) {
+        if (r.ok) { addLink(pdf, true); }
+        else if (web) { addLink(web, false); }
+      })
+      .catch(function () { if (web) { addLink(web, false); } });
+  });
+
   /* ---------- scrollspy: highlight current section in the nav ---------- */
   var links = Array.prototype.slice.call(document.querySelectorAll("nav a[href^='#']"));
   if (!links.length) { return; }
