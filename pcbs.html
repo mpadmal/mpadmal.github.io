@@ -42,7 +42,7 @@
     <div class="shead"><span class="bar"></span><h2>Open-Source Hardware</h2></div>
     <div class="pcbgrid">
       <div class="pcb">
-        <div class="pcb-img"><img src="assets/img/pcbs/pslab.jpg" alt="PSLab board" loading="lazy" onerror="this.remove()"></div>
+        <div class="pcb-img"><img src="assets/img/pcbs/pslab.jpg" alt="PSLab V6 board, top and angled views" loading="lazy" onerror="this.remove()"></div>
         <div class="pcb-body">
           <span class="award-strip">PCBWay Design Award — 1st Place (2017), 3rd Place (2021)</span>
           <h3>Pocket Science Lab (PSLab)</h3>
@@ -138,6 +138,33 @@
           <div class="venue">RFID '22–'24 · MSWiM '25 · RFCom '24</div>
           <p>Series of low-power tag front-ends behind the group's backscatter papers: harmonic-tuned identification (HarmonicID), band-pass-filtered desynchronized querying, channel-estimating tags, and concurrent-sensing localization tags.</p>
           <div class="tags"><span class="tag">RF front-end</span><span class="tag">Harmonics</span><span class="tag">µW power</span><span class="tag">Best Paper 2024</span></div>
+        </div>
+      </div>
+      <div class="pcb">
+        <div class="pcb-img"><img src="assets/img/pcbs/mmwave-backscatter.jpg" alt="mmWave backscatter tag board, top and bottom" loading="lazy" onerror="this.remove()"></div>
+        <div class="pcb-body">
+          <h3>mmWave Backscatter Tag</h3>
+          <div class="venue">Research prototype · V2.0 (2026) · DC to 30 GHz</div>
+          <p>A wideband backscatter tag built around the ADRF5021 SPDT switch, which toggles the antenna port at up to 30 GHz to reflect a modulated signal. Two on-board resistor-set oscillators drive the switch: a high-frequency path tunable from 17 to 170 MHz and a low-frequency path from 0.04 to 4 MHz, each with jumper-selectable dividers. A header selects which oscillator controls the switching, and sensor inputs let a resistive sensor set the subcarrier frequency directly. The RF input runs on via-fenced grounded coplanar waveguide, and the board generates its own +3.3 V and −2.5 V switch rails.</p>
+          <div class="tags"><span class="tag">ADRF5021</span><span class="tag">mmWave</span><span class="tag">Grounded CPW</span><span class="tag">Subcarrier modulation</span><span class="tag">Analog sensing</span></div>
+        </div>
+      </div>
+      <div class="pcb">
+        <div class="pcb-img"><img src="assets/img/pcbs/rf-carrier.jpg" alt="RF carrier generator board" loading="lazy" onerror="this.remove()"></div>
+        <div class="pcb-body">
+          <h3>RF Carrier Generator</h3>
+          <div class="venue">Lab instrument · 800–980 MHz</div>
+          <p>A compact carrier source for backscatter experiments. A Crystek CVCO55CL voltage-controlled oscillator covers 800 to 980 MHz, including the 868 and 915 MHz ISM bands, and a front-panel potentiometer sets its tuning voltage. An RF amplifier stage with 18 dB of gain boosts the output to the SMA connector, and an enable header lets an external signal key or modulate the carrier. Two low-noise regulators supply the VCO and amplifier separately from a DC barrel jack.</p>
+          <div class="tags"><span class="tag">VCO</span><span class="tag">18 dB gain stage</span><span class="tag">Sub-GHz ISM</span><span class="tag">Carrier generation</span></div>
+        </div>
+      </div>
+      <div class="pcb">
+        <div class="pcb-img"><img src="assets/img/pcbs/multi-tag.jpg" alt="3-in-1 multi-tag backscatter board" loading="lazy" onerror="this.remove()"></div>
+        <div class="pcb-body">
+          <h3>3-in-1 Multi-Tag Board</h3>
+          <div class="venue">Concurrent backscatter test platform</div>
+          <p>A single board that behaves as three independent backscatter tags sharing one antenna. A Mini-Circuits 3-way power splitter divides the RF port into three branches, and each branch has its own modulating switch, oscillator, and potentiometer, so each tag can run at a different subcarrier frequency. The board lets me test concurrent multi-tag reception and collisions in a repeatable setup instead of placing three separate tags.</p>
+          <div class="tags"><span class="tag">3-way splitter</span><span class="tag">Multi-tag</span><span class="tag">Concurrent backscatter</span><span class="tag">Sub-GHz RF</span></div>
         </div>
       </div>
     </div>
